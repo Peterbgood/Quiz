@@ -1,152 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Global Styles */
-        body {
-            font-family: "Quicksand", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 700;
-            font-style: normal;
-        }
-        
-        /* Button Styles */
-        .btn-dark {
-            background-color: #000;
-            color: #fff;
-            border: none !important;
-            padding: 10px 20px !important;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 50px !important;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
-            transition: all 0.3s ease !important;
-            position: relative;
-        }
-        
-        .btn-dark::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) !important;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            border-radius: 50px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .btn-dark:hover::before {
-            opacity: 0.2;
-        }
-        
-        .btn-dark:active::before {
-            opacity: 0.5;
-        }
-        
-        /* Quiz Container Styles */
-        .quiz-container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #f7f7f7;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .play-again-button, .share-button {
-            width: 100%;
-            margin-bottom: 10px;
-            margin-top: 10px;
-            padding: 10px;
-        }
-        
-        .quiz-container h1 {
-            margin-bottom: 10px;
-            color: #333;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .quiz-container .question {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #444;
-        }
-        
-        .question-number {
-            padding-bottom: 10px;
-            text-align: center;
-        }
-        
-        .quiz-container .answers {
-            margin-bottom: 20px;
-        }
-        
-        .quiz-container .answer-button {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        
-        .quiz-container .answer-button:hover {
-        }
-        
-        .quiz-container .result {
-            font-size: 15px;
-            margin-bottom: 20px;
-            color: #666;
-        }
-        
-        .quiz-container .next-button-container button {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        
-        .quiz-container .share-button {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff9900;
-            color: #fff;
-            cursor: pointer;
-        }
-        
-        .quiz-container .share-button:hover {
-            background-color: #ff7a00;
-        }
-        
-        /* Correct and Incorrect Answer Styles */
-        .correct-answer {
-            animation: correct-answer 0.5s;
-            border: none;
-            background-color: green;
-            color: #fff;
-        }
-        
-        @keyframes correct-answer {
-            0% {
-                transform: scale(1);
-            }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Game</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+body {
+font-family: "Quicksand", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+}
+
+
+.btn-dark {
+background-color: #000;
+color: #fff;
+border: none !important;
+;
+padding: 10px 20px !important;
+;
+font-size: 16px;
+cursor: pointer;
+border-radius: 50px !important;
+;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+;
+transition: all 0.3s ease !important;
+;
+position: relative;
+}
+
+.btn-dark::before {
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) !important;
+;
+width: 100%;
+height: 100%;
+background-color: #fff;
+border-radius: 50px;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.btn-dark:hover::before {
+opacity: 0.2;
+}
+
+.btn-dark:active::before {
+opacity: 0.5;
+}
+
+.quiz-container {
+max-width: 600px;
+margin: 40px auto;
+padding: 30px;
+background-color: #f7f7f7;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.play-again-button, .share-button {
+width: 100%;
+margin-bottom: 10px;
+margin-top: 10px;
+padding: 10px;
+}
+
+.quiz-container h1 {
+margin-bottom: 10px;
+color: #333;
+text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-container .question {
+font-size: 16px;
+margin-bottom: 20px;
+color: #444;
+}
+
+.question-number {
+padding-bottom: 10px;
+text-align: center;
+}
+
+.quiz-container .answers {
+margin-bottom: 20px;
+}
+
+.quiz-container .answer-button {
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+}
+
+.quiz-container .answer-button:hover {
+}
+
+.quiz-container .result {
+font-size: 15px;
+margin-bottom: 20px;
+color: #666;
+}
+
+.quiz-container .next-button-container button {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+}
+
+
+
+.quiz-container .share-button {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+background-color: #ff9900;
+color: #fff;
+cursor: pointer;
+}
+
+.quiz-container .share-button:hover {
+background-color: #ff7a00;
+}
+
+.correct-answer {
+animation: correct-answer 0.5s;
+border: none;
+background-color: green;
+color: #fff;
+}
+
+@keyframes correct-answer {
+0% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.1);
+}
+
+100% {
+transform: scale(1);
+}
+}
+
+.incorrect-answer {
+animation: incorrect-answer 0.5s;
+border: none;
+background-color: #e74c3c;
+color: #fff;
+}
+
+@keyframes incorrect-answer {
+0% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(0.9);
+}
+
+100% {
+transform: scale(1);
+}
+}
+
+.btn-success:hover {
+background-color: green
+}
+
+.incorrect-answer:hover {
+background-color: #e74c3c !important;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="quiz-container">
+<h1 class="text-center">Trivia</h1>
+<div class="question mb-4"></div>
+<div class="mb-1"></div>
+<div class="answers"></div>
+
+<div class="result"></div>
+<hr>
+<div class="next-button-container"></div>
+</div>
+</div>
+<script src="Script.js"></script>
+</body>
+</html>
